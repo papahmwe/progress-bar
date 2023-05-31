@@ -1,0 +1,91 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f5f1f1;
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main_container {
+    text-align: center;
+}
+
+.container {
+    max-width: 100%;
+    width: 350px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    background-color: #e1e1dd;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    height: 4px;
+    z-index: -1;
+    transform: translateY(-50%);
+    transition: 0.4s ease;
+}
+
+.progress_bar {
+    position: absolute;
+    background-color: #1a06f5;
+    width: 0%;
+    top: 50%;
+    left: 0;
+    height: 4px;
+    z-index: -1;
+    transform: translateY(-50%);
+    transition: 0.4s ease;
+}
+
+.circle {
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #b5b0b0;
+    transition: 0.4s ease;
+}
+
+.circle.active {
+    border-color: #786df5;
+}
+
+.btn {
+    font-size: 16px;
+    padding: 10px 30px;
+    background-color: #786df5;
+    color: #fff;
+    border: 0;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn:disabled {
+    background-color: #d2d2d5;
+    cursor: not-allowed;
+}
+
+.btn:focus {
+    outline: 0;
+}
